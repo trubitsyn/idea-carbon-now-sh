@@ -4,6 +4,8 @@
     <vendor email="nikola.trubitsyn@gmail.com" url="https://github.com/trubitsyn/idea-carbon-now-sh">Nikola Trubitsyn</vendor>
     <idea-version since-build="145"/>
 
+    <depends>com.intellij.modules.platform</depends>
+
     <description><![CDATA[
       Open the current editor contents in <a href="https://carbon.now.sh">https://carbon.now.sh</a>
     ]]></description>
