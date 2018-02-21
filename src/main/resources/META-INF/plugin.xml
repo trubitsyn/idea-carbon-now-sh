@@ -1,0 +1,22 @@
+<idea-plugin>
+  <id>carbon-now-sh</id>
+  <name>carbon-now-sh</name>
+  <vendor email="nikola.trubitsyn@gmail.com" url="https://github.com/trubitsyn/idea-carbon-now-sh">Nikola Trubitsyn</vendor>
+
+  <description><![CDATA[
+      Open the current editor contents in <a href="https://carbon.now.sh">https://carbon.now.sh</a>
+    ]]></description>
+
+  <change-notes><![CDATA[
+      First release.
+    ]]>
+  </change-notes>
+
+  <actions>
+    <action id="io.github.trubitsyn.carbonnowsh.open" class="io.github.trubitsyn.carbonnowsh.OpenInCarbonNowShAction"
+            text="Open in carbon.now.sh" description="Opens the selected editor content in https://carbon.now.sh">
+      <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="$SearchWeb"/>
+    </action>
+  </actions>
+
+</idea-plugin>
