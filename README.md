@@ -2,6 +2,13 @@
 
 IntelliJ IDEA plugin to open the current editor contents in [https://carbon.now.sh](https://carbon.now.sh)
 
+# Usage
+
+1. Select the code you'd like to beautify with Carbon
+2. Right-click on the selection
+3. Select "Open in carbon.now.sh" in a context menu
+4. Enjoy!
+
 # Building from source
 
 1. Clone repository
