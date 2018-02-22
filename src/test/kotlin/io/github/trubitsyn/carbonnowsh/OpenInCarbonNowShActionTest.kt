@@ -17,8 +17,8 @@
 package io.github.trubitsyn.carbonnowsh
 
 import org.junit.Assert.assertEquals
+import org.junit.Assert.fail
 import org.junit.Test
-import org.mockito.Mockito.*
 
 class OpenInCarbonNowShActionTest {
     val action = OpenInCarbonNowShAction()
@@ -43,25 +43,25 @@ class OpenInCarbonNowShActionTest {
                     }
                 """.trimIndent()
 
-        val browsable = mock(Browsable::class.java)
-        doNothing().`when`(browsable).browse(anyString())
-
-        action.openInCarbonNowSh(contents, browsable)
+        var url: String? = null
+        action.openInCarbonNowSh(contents, {
+            url = it
+        })
         val actualUrl = "https://carbon.now.sh/?code=package%20foo%0A%0Aclass%20Foo%20%7B%0A%0A%20%20%20%20fun%20foo()%20%7B%0A%20%20%20%20%20%20%20%20println(%22foo%22)%0A%20%20%20%20%7D%0A%7D"
-        verify(browsable).browse(actualUrl)
+        assertEquals(actualUrl, url)
     }
 
     @Test
     fun testEmptyContents() {
-        val browsable = mock(Browsable::class.java)
-        action.openInCarbonNowSh("", browsable)
-        verifyZeroInteractions(browsable)
+        action.openInCarbonNowSh("", {
+            fail()
+        })
     }
 
     @Test
     fun testNullContents() {
-        val browsable = mock(Browsable::class.java)
-        action.openInCarbonNowSh(null, browsable)
-        verifyZeroInteractions(browsable)
+        action.openInCarbonNowSh(null, {
+            fail()
+        })
     }
 }

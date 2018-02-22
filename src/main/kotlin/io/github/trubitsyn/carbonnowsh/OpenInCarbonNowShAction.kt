@@ -40,17 +40,15 @@ class OpenInCarbonNowShAction : AnAction() {
                     .getInstance()
                     .getContents<String>(DataFlavor.stringFlavor)
 
-            openInCarbonNowSh(contents, object : Browsable {
-                override fun browse(url: String) {
-                    BrowserUtil.browse(url)
-                }
+            openInCarbonNowSh(contents, {
+                BrowserUtil.browse(it)
             })
         }
     }
 
-    fun openInCarbonNowSh(contents: String?, browsable: Browsable) {
+    fun openInCarbonNowSh(contents: String?, browse: (url: String) -> Unit) {
         if (contents != null && contents.isNotEmpty()) {
-            browsable.browse(CARBON_URL + URLUtil.encodeURIComponent(contents))
+            browse(CARBON_URL + URLUtil.encodeURIComponent(contents))
         }
     }
 
