@@ -1,4 +1,4 @@
-# idea-carbon-now-sh [![Build Status](https://travis-ci.org/trubitsyn/idea-carbon-now-sh.svg?branch=master)](https://travis-ci.org/trubitsyn/idea-carbon-now-sh)
+# idea-carbon-now-sh [![Build Status](https://travis-ci.org/trubitsyn/idea-carbon-now-sh.svg?branch=master)](https://travis-ci.org/trubitsyn/idea-carbon-now-sh) [![Downloads](https://img.shields.io/jetbrains/plugin/d/10469-carbon-now-sh.svg)](https://plugins.jetbrains.com/plugin/10469-carbon-now-sh) [![Version](https://img.shields.io/jetbrains/plugin/v/10469-carbon-now-sh.svg)](https://plugins.jetbrains.com/plugin/10469-carbon-now-sh)
 
 IntelliJ IDEA plugin to open the current editor contents in [https://carbon.now.sh](https://carbon.now.sh)
 
