@@ -25,17 +25,7 @@ class OpenInCarbonNowShActionTest {
 
     @Test
     fun testUrlCorrect() {
-        val carbonUrl =
-                "https://carbon.now.sh/" +
-                        "?bg=rgba(0,0,0,0)" +
-                        "&t=dracula" +
-                        "&l=auto&ds=true" +
-                        "&wc=true" +
-                        "&wa=true" +
-                        "&pv=43px" +
-                        "&ph=57px" +
-                        "&ln=false" +
-                        "&code="
+        val carbonUrl = "https://carbon.now.sh/?code="
 
         assertEquals(carbonUrl, OpenInCarbonNowShAction.CARBON_URL)
     }
@@ -54,7 +44,7 @@ class OpenInCarbonNowShActionTest {
                     }
                 """.trimIndent()
 
-        val actualUrl = "https://carbon.now.sh/?bg=rgba(0,0,0,0)&t=dracula&l=auto&ds=true&wc=true&wa=true&pv=43px&ph=57px&ln=false&code=package%20foo%0A%0Aclass%20Foo%20%7B%0A%0A%20%20%20%20fun%20foo()%20%7B%0A%20%20%20%20%20%20%20%20println(%22foo%22)%0A%20%20%20%20%7D%0A%7D"
+        val actualUrl = "https://carbon.now.sh/?code=package%20foo%0A%0Aclass%20Foo%20%7B%0A%0A%20%20%20%20fun%20foo()%20%7B%0A%20%20%20%20%20%20%20%20println(%22foo%22)%0A%20%20%20%20%7D%0A%7D"
 
         val browsable = mock(Browsable::class.java)
         doNothing().`when`(browsable).browse(anyString())
