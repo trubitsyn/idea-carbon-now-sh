@@ -33,7 +33,6 @@ repositories {
 
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    testCompile "org.mockito:mockito-core:2.15.0"
 }
 
 compileKotlin {
