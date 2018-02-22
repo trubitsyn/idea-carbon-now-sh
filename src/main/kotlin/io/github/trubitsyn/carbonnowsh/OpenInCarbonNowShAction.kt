@@ -16,6 +16,7 @@
 
 package io.github.trubitsyn.carbonnowsh
 
+import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.PlatformDataKeys
@@ -39,7 +40,11 @@ class OpenInCarbonNowShAction : AnAction() {
                     .getInstance()
                     .getContents<String>(DataFlavor.stringFlavor)
 
-            openInCarbonNowSh(contents, DefaultBrowsable())
+            openInCarbonNowSh(contents, object : Browsable {
+                override fun browse(url: String) {
+                    BrowserUtil.browse(url)
+                }
+            })
         }
     }
 
