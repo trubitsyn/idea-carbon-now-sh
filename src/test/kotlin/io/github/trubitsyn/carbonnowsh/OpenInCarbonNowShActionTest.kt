@@ -24,13 +24,13 @@ class OpenInCarbonNowShActionTest {
     val action = OpenInCarbonNowShAction()
 
     @Test
-    fun testUrlCorrect() {
+    fun baseUrlShouldBeCorrect() {
         val carbonUrl = "https://carbon.now.sh/?code="
         assertEquals(carbonUrl, OpenInCarbonNowShAction.CARBON_URL)
     }
 
     @Test
-    fun testUrlWithParametersCorrect() {
+    fun urlWithParametersShouldBeCorrect() {
         val contents =
                 """
                     package foo
@@ -52,14 +52,14 @@ class OpenInCarbonNowShActionTest {
     }
 
     @Test
-    fun testEmptyContents() {
+    fun emptyContentsShouldNotBeAccepted() {
         action.openInCarbonNowSh("", {
             fail()
         })
     }
 
     @Test
-    fun testNullContents() {
+    fun nullContentsShouldNotBeAccepted() {
         action.openInCarbonNowSh(null, {
             fail()
         })
