@@ -7,7 +7,7 @@
     <depends>com.intellij.modules.platform</depends>
 
     <description><![CDATA[
-      Open the current editor contents in <a href="https://carbon.now.sh">https://carbon.now.sh</a>
+      Open the selected code in <a href="https://carbon.now.sh">https://carbon.now.sh</a>
     ]]></description>
 
     <change-notes><![CDATA[
@@ -18,7 +18,7 @@
     <actions>
         <action id="io.github.trubitsyn.carbonnowsh.open"
                 class="io.github.trubitsyn.carbonnowsh.OpenInCarbonNowShAction"
-                text="Open in carbon.now.sh" description="Opens the selected editor content in https://carbon.now.sh">
+                text="Open in carbon.now.sh" description="Open the selected code in https://carbon.now.sh">
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="$SearchWeb"/>
         </action>
     </actions>
