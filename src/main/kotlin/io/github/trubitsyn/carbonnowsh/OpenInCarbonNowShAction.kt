@@ -26,8 +26,7 @@ import java.awt.datatransfer.DataFlavor
 class OpenInCarbonNowShAction : AnAction() {
 
     companion object {
-        const val CARBON_URL =
-                "https://carbon.now.sh/?code="
+        const val CARBON_URL = "https://carbon.now.sh/?code="
     }
 
     override fun actionPerformed(e: AnActionEvent) {
