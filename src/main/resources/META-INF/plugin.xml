@@ -11,7 +11,7 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      Do not set styles in URL.
+      Fixed URL encoding.
     ]]>
     </change-notes>
 
