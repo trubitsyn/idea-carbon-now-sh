@@ -31,11 +31,9 @@ class OpenInCarbonNowShAction : AnAction() {
     }
 
     override fun actionPerformed(e: AnActionEvent) {
-        val context = e.dataContext
-        val provider = PlatformDataKeys.COPY_PROVIDER.getData(context)
+        PlatformDataKeys.COPY_PROVIDER.getData(e.dataContext)?.let {
+            it.performCopy(e.dataContext)
 
-        provider?.let {
-            it.performCopy(context)
             val contents = CopyPasteManager
                     .getInstance()
                     .getContents<String>(DataFlavor.stringFlavor)
