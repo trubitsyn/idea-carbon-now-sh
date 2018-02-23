@@ -30,24 +30,23 @@ class OpenInCarbonNowShActionTest {
     }
 
     @Test
-    fun urlWithParametersShouldBeCorrect() {
+    fun contentsShouldBeProperlyEncoded() {
         val contents =
                 """
-                    package foo
-
-                    class Foo {
-
-                        fun foo() {
-                            println("foo")
-                        }
-                    }
+                    <table align="center" class="headcontainer" width="100%" height="33%">
+                        <tbody>
+                            <tr>
+                                <td>All the rows go here!</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 """.trimIndent()
 
         var url: String? = null
         action.openInCarbonNowSh(contents, {
             url = it
         })
-        val actualUrl = "https://carbon.now.sh/?code=package%20foo%0A%0Aclass%20Foo%20%7B%0A%0A%20%20%20%20fun%20foo()%20%7B%0A%20%20%20%20%20%20%20%20println(%22foo%22)%0A%20%20%20%20%7D%0A%7D"
+        val actualUrl = "https://carbon.now.sh/?code=%253Ctable%2520align%253D%2522center%2522%2520class%253D%2522headcontainer%2522%2520width%253D%2522100%2525%2522%2520height%253D%252233%2525%2522%253E%250A%2520%2520%2520%2520%253Ctbody%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ctr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EAll%2520the%2520rows%2520go%2520here%2521%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Ftr%253E%250A%2520%2520%2520%2520%253C%252Ftbody%253E%250A%253C%252Ftable%253E"
         assertEquals(actualUrl, url)
     }
 

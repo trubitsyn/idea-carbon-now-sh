@@ -21,8 +21,8 @@ import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.PlatformDataKeys
 import com.intellij.openapi.ide.CopyPasteManager
-import com.intellij.util.io.URLUtil
 import java.awt.datatransfer.DataFlavor
+import java.net.URLEncoder
 
 class OpenInCarbonNowShAction : AnAction() {
 
@@ -48,8 +48,14 @@ class OpenInCarbonNowShAction : AnAction() {
 
     fun openInCarbonNowSh(contents: String?, browse: (url: String) -> Unit) {
         if (contents != null && contents.isNotEmpty()) {
-            browse(CARBON_URL + URLUtil.encodeURIComponent(contents))
+            browse(CARBON_URL + encode(contents))
         }
+    }
+
+    private fun encode(s: String): String {
+        return URLEncoder.encode(s, "UTF-8")
+                .replace("+", "%20")
+                .replace("%", "%25")
     }
 
     override fun update(e: AnActionEvent?) {
