@@ -11,7 +11,10 @@
     ]]></description>
 
     <change-notes><![CDATA[
-      Fixed URL encoding.
+      <ul>
+        <li>Strip unnecessary indentation</li>
+        <li>Auto-detect programming language by extension</li>
+      </ul>
     ]]>
     </change-notes>
 
