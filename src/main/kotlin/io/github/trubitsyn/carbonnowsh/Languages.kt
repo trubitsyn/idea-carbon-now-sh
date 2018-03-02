@@ -18,7 +18,7 @@ package io.github.trubitsyn.carbonnowsh
 
 object Languages {
     private const val AUTO = "auto"
-    private const val PLAINTEXT = "plain"
+    private const val PLAINTEXT = "text"
     private const val APACHE = "text/apache"
     private const val BASH = "application/x-sh"
     private const val C = "text/x-csrc"
@@ -85,7 +85,7 @@ object Languages {
 
     private val mapping = hashMapOf(
             "" to PLAINTEXT,
-            "apache" to APACHE,
+            // Apache omitted
             "sh" to BASH,
             "c" to C,
             "cpp" to CPP,
