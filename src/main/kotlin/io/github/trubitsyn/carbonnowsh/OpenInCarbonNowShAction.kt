@@ -37,6 +37,7 @@ class OpenInCarbonNowShAction : AnAction() {
             val contents = CopyPasteManager
                     .getInstance()
                     .getContents<String>(DataFlavor.stringFlavor)
+                    ?.trimIndent()
 
             openInCarbonNowSh(contents, {
                 BrowserUtil.browse(it)
