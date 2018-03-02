@@ -25,7 +25,7 @@ class OpenInCarbonNowShActionTest {
 
     @Test
     fun baseUrlShouldBeCorrect() {
-        val carbonUrl = "https://carbon.now.sh/?code="
+        val carbonUrl = "https://carbon.now.sh"
         assertEquals(carbonUrl, OpenInCarbonNowShAction.CARBON_URL)
     }
 
@@ -43,23 +43,23 @@ class OpenInCarbonNowShActionTest {
                 """.trimIndent()
 
         var url: String? = null
-        action.openInCarbonNowSh(contents, {
+        action.openInCarbonNowSh(contents, null, {
             url = it
         })
-        val actualUrl = "https://carbon.now.sh/?code=%253Ctable%2520align%253D%2522center%2522%2520class%253D%2522headcontainer%2522%2520width%253D%2522100%2525%2522%2520height%253D%252233%2525%2522%253E%250A%2520%2520%2520%2520%253Ctbody%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ctr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EAll%2520the%2520rows%2520go%2520here%2521%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Ftr%253E%250A%2520%2520%2520%2520%253C%252Ftbody%253E%250A%253C%252Ftable%253E"
+        val actualUrl = "https://carbon.now.sh?l=auto&code=%253Ctable%2520align%253D%2522center%2522%2520class%253D%2522headcontainer%2522%2520width%253D%2522100%2525%2522%2520height%253D%252233%2525%2522%253E%250A%2520%2520%2520%2520%253Ctbody%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253Ctr%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%2520%253Ctd%253EAll%2520the%2520rows%2520go%2520here%2521%253C%252Ftd%253E%250A%2520%2520%2520%2520%2520%2520%2520%2520%253C%252Ftr%253E%250A%2520%2520%2520%2520%253C%252Ftbody%253E%250A%253C%252Ftable%253E"
         assertEquals(actualUrl, url)
     }
 
     @Test
     fun emptyContentsShouldNotBeAccepted() {
-        action.openInCarbonNowSh("", {
+        action.openInCarbonNowSh("", null, {
             fail()
         })
     }
 
     @Test
     fun nullContentsShouldNotBeAccepted() {
-        action.openInCarbonNowSh(null, {
+        action.openInCarbonNowSh(null, null, {
             fail()
         })
     }

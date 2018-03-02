@@ -19,6 +19,7 @@ package io.github.trubitsyn.carbonnowsh
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.actionSystem.CommonDataKeys
 import com.intellij.openapi.actionSystem.PlatformDataKeys
 import com.intellij.openapi.ide.CopyPasteManager
 import java.awt.datatransfer.DataFlavor
@@ -27,7 +28,7 @@ import java.net.URLEncoder
 class OpenInCarbonNowShAction : AnAction() {
 
     companion object {
-        const val CARBON_URL = "https://carbon.now.sh/?code="
+        const val CARBON_URL = "https://carbon.now.sh"
     }
 
     override fun actionPerformed(e: AnActionEvent) {
@@ -39,16 +40,24 @@ class OpenInCarbonNowShAction : AnAction() {
                     .getContents<String>(DataFlavor.stringFlavor)
                     ?.trimIndent()
 
-            openInCarbonNowSh(contents, {
+            val psiFile = e.getData(CommonDataKeys.PSI_FILE)
+            val extension = psiFile?.virtualFile?.extension
+
+            openInCarbonNowSh(contents, extension, {
                 BrowserUtil.browse(it)
             })
         }
     }
 
-    fun openInCarbonNowSh(contents: String?, browse: (url: String) -> Unit) {
+    fun openInCarbonNowSh(contents: String?, extension: String?, browse: (url: String) -> Unit) {
         if (contents != null && contents.isNotEmpty()) {
-            browse(CARBON_URL + encode(contents))
+            val url = buildUrl(encode(contents), Languages.forExtension(extension))
+            browse(url)
         }
+    }
+
+    private fun buildUrl(code: String, language: String): String {
+        return "$CARBON_URL?l=$language&code=$code"
     }
 
     private fun encode(s: String): String {
