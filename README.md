@@ -2,20 +2,20 @@
 
 IntelliJ IDEA plugin to open the selected code in [https://carbon.now.sh](https://carbon.now.sh)
 
-# Usage
+## Usage
 
 1. Select the code you'd like to beautify with Carbon
 2. Right-click on the selection
 3. Select "Open in carbon.now.sh" in a context menu
 4. Enjoy!
 
-# Building from source
+## Building from source
 
 1. Clone repository
 2. Run `./gradlew buildPlugin`
 3. You can find the plugin in `build/distributions` directory
 
-# LICENSE
+## LICENSE
 
 ```
 Copyright 2018 Nikola Trubitsyn
