@@ -53,6 +53,7 @@ object Languages {
     private const val JSX = "jsx"
     private const val JULIA = "julia"
     private const val KOTLIN = "text/x-kotlin"
+    private const val LATEX = "stex"
     private const val LISP = "commonlisp"
     private const val LUA = "lua"
     private const val MARKDOWN = "markdown"
@@ -142,6 +143,7 @@ object Languages {
             "jl" to JULIA,
             "kt" to KOTLIN,
             "kts" to KOTLIN,
+            "tex" to LATEX,
             "lisp" to LISP,
             "lsp" to LISP,
             "l" to LISP,
