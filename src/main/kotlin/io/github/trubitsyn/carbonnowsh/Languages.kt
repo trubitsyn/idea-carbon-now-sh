@@ -61,6 +61,7 @@ object Languages {
     private const val NGINX = "nginx"
     private const val NIM = "nimrod"
     private const val OBJECTIVEC = "text/x-objectivec"
+    private const val OCTAVE = "text/x-octave"
     private const val PASCAL = "pascal"
     private const val PERL = "perl"
     private const val PHP = "text/x-php"
@@ -160,6 +161,7 @@ object Languages {
             "m" to OBJECTIVEC,
             "mm" to OBJECTIVEC,
             "M" to OBJECTIVEC,
+            "text/x-octave" to OCTAVE,
             "pp" to PASCAL,
             "pas" to PASCAL,
             "inc" to PASCAL,
