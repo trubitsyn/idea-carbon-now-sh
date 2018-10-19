@@ -12,8 +12,12 @@
 
     <change-notes><![CDATA[
       <ul>
-        <li>Strip unnecessary indentation</li>
-        <li>Auto-detect programming language by extension</li>
+        <li>Add LaTex language</li>
+        <li>Add N-Triples language</li>
+        <li>Add Octave language</li>
+        <li>Add SPARQL language</li>
+        <li>Add Stylus language</li>
+        <li>Add Turtle language</li>
       </ul>
     ]]>
     </change-notes>
