@@ -61,6 +61,7 @@ object Languages {
     private const val MYSQL = "text/x-mysql"
     private const val NGINX = "nginx"
     private const val NIM = "nimrod"
+    private const val NTRIPLES = "application/n-triples"
     private const val OBJECTIVEC = "text/x-objectivec"
     private const val OCTAVE = "text/x-octave"
     private const val PASCAL = "pascal"
@@ -160,6 +161,7 @@ object Languages {
             // MySQL omitted
             // NGINX omitted
             "nim" to NIM,
+            "nt" to NTRIPLES,
             // duplicate "h" key
             "h" to OBJECTIVEC,
             "m" to OBJECTIVEC,
