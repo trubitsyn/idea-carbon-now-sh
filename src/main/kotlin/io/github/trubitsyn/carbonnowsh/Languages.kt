@@ -79,6 +79,7 @@ object Languages {
     private const val STYLUS = "stylus"
     private const val SWIFT = "swift"
     private const val TCL = "tcl"
+    private const val TURTLE = "text/turtle"
     private const val TYPESCRIPT = "application/typescript"
     private const val VBNET = "vb"
     private const val VERILOG = "verilog"
@@ -213,6 +214,8 @@ object Languages {
             "swift" to SWIFT,
             "tcl" to TCL,
             "tbc" to TCL,
+            "logo" to TURTLE,
+            "turtle" to TURTLE,
             "ts" to TYPESCRIPT,
             "tsx" to TYPESCRIPT,
             "vb" to VBNET,
