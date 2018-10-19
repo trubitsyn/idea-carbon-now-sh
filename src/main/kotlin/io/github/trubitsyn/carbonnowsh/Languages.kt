@@ -73,6 +73,7 @@ object Languages {
     private const val SCALA = "text/x-scala"
     private const val SMALLTALK = "smalltalk"
     private const val SQL = "sql"
+    private const val STYLUS = "stylus"
     private const val SWIFT = "swift"
     private const val TCL = "tcl"
     private const val TYPESCRIPT = "application/typescript"
@@ -202,6 +203,7 @@ object Languages {
             "sc" to SCALA,
             // Smalltalk omitted
             "sql" to SQL,
+            "styl" to STYLUS,
             "swift" to SWIFT,
             "tcl" to TCL,
             "tbc" to TCL,
