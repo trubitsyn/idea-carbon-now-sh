@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.trubitsyn.carbonnowsh
+package org.trubitsyn.carbonnowsh
 
 import com.intellij.ide.BrowserUtil
 import com.intellij.openapi.actionSystem.AnAction

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.trubitsyn.carbonnowsh
+package org.trubitsyn.carbonnowsh
 
 import org.junit.Assert.assertEquals
 import org.junit.Assert.fail

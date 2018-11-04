@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package io.github.trubitsyn.carbonnowsh
+package org.trubitsyn.carbonnowsh
 
 object Languages {
     private const val AUTO = "auto"
