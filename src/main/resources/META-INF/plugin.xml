@@ -12,12 +12,8 @@
 
     <change-notes><![CDATA[
       <ul>
-        <li>Add LaTex language</li>
-        <li>Add N-Triples language</li>
-        <li>Add Octave language</li>
-        <li>Add SPARQL language</li>
-        <li>Add Stylus language</li>
-        <li>Add Turtle language</li>
+        <li>Better extension handling</li>
+        <li>Includes latest Carbon changes</li>
       </ul>
     ]]>
     </change-notes>
