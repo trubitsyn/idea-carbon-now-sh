@@ -126,27 +126,29 @@ export function kotlinize(extensionToCarbonTypePairs) {
     constants.push(autoConstant)
     constants.sort()
 
-    let code = []
     let entrySeparator = comma + newline + indent + indent
-    code.push(packageName)
-    code.push(blankline)
-    code.push(objectStart)
-    code.push(newline)
-    code.push(indent)
-    code.push(constants.join(newline + indent))
-    code.push(blankline)
-    code.push(indent)
-    code.push(mappingStart)
-    code.push(newline)
-    code.push(indent.repeat(2))
-    code.push(entries.join(entrySeparator))
-    code.push(newline)
-    code.push(indent)
-    code.push(mappingEnd)
-    code.push(blankline)
-    code.push(indent)
-    code.push(func)
-    code.push(newline)
-    code.push(objectEnd)
+    let newlineIndent = newline + indent
+    let code = [
+        packageName,
+        blankline,
+        objectStart,
+        newline,
+        indent,
+        constants.join(newlineIndent),
+        blankline,
+        indent,
+        mappingStart,
+        newline,
+        indent.repeat(2),
+        entries.join(entrySeparator),
+        newline,
+        indent,
+        mappingEnd,
+        blankline,
+        indent,
+        func,
+        newline,
+        objectEnd
+    ]
     return code.join('')
 }
