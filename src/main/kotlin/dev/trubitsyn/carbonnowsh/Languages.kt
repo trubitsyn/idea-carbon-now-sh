@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.trubitsyn.carbonnowsh
+package dev.trubitsyn.carbonnowsh
 
 object Languages {
     private const val APPLICATION_SLASH_JSON = "application/json"

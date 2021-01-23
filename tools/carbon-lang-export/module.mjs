@@ -82,7 +82,7 @@ export function safeVariableName(str) {
         .replace(/__/g, '_')
 }
 
-let packageName = `package org.trubitsyn.carbonnowsh`
+let packageName = `package dev.trubitsyn.carbonnowsh`
 let objectStart = `object Languages {`
 let objectEnd = `}`
 let carbonTypeNameVar = `{carbonTypeName}`

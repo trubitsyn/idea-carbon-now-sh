@@ -19,8 +19,8 @@
     </change-notes>
 
     <actions>
-        <action id="org.trubitsyn.carbonnowsh.open"
-                class="org.trubitsyn.carbonnowsh.OpenInCarbonNowShAction"
+        <action id="dev.trubitsyn.carbonnowsh.open"
+                class="dev.trubitsyn.carbonnowsh.OpenInCarbonNowShAction"
                 text="Open in carbon.now.sh" description="Open the selected code in https://carbon.now.sh">
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="$SearchWeb"/>
         </action>

@@ -24,7 +24,7 @@ intellij {
     updateSinceUntilBuild false
 }
 
-group 'org.trubitsyn.carbonnowsh'
+group 'dev.trubitsyn.carbonnowsh'
 version '1.2.0'
 
 repositories {
