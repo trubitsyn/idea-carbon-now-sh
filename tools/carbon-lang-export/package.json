@@ -1,0 +1,7 @@
+{
+  "type": "module",
+  "dependencies": {
+    "@itassistors/langline": "^1.0.3",
+    "mime-types": "^2.1.28"
+  }
+}
