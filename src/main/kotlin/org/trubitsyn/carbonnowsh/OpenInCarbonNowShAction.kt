@@ -31,52 +31,53 @@ class OpenInCarbonNowShAction : AnAction() {
         const val CARBON_URL = "https://carbon.now.sh"
     }
 
-    override fun actionPerformed(e: AnActionEvent) {
-        PlatformDataKeys.COPY_PROVIDER.getData(e.dataContext)?.let {
-            it.performCopy(e.dataContext)
+    override fun actionPerformed(event: AnActionEvent) {
+        PlatformDataKeys.COPY_PROVIDER.getData(event.dataContext)?.let {
+            it.performCopy(event.dataContext)
 
-            val contents = CopyPasteManager
-                    .getInstance()
-                    .getContents<String>(DataFlavor.stringFlavor)
-                    ?.trimIndent()
-
-            val psiFile = e.getData(CommonDataKeys.PSI_FILE)
+            val psiFile = event.getData(CommonDataKeys.PSI_FILE)
             val extension = psiFile?.virtualFile?.extension
+            val contents = CopyPasteManager
+                .getInstance()
+                .getContents<String>(DataFlavor.stringFlavor)
+                ?.trimIndent()
 
-            openInCarbonNowSh(contents, extension, {
+            openInCarbonNowSh(contents, extension) {
                 BrowserUtil.browse(it)
-            })
+            }
         }
     }
 
     fun openInCarbonNowSh(contents: String?, extension: String?, browse: (url: String) -> Unit) {
-        if (contents != null && contents.isNotEmpty()) {
-            val url = buildUrl(encode(contents), Languages.forExtension(extension))
+        if (contents?.isNotEmpty() == true) {
+            val url = buildUrl(
+                language = Languages.forExtension(extension),
+                code = encode(contents)
+            )
             browse(url)
         }
     }
 
-    private fun buildUrl(code: String, language: String): String {
+    private fun buildUrl(language: String, code: String): String {
         return "$CARBON_URL?l=$language&code=$code"
     }
 
     private fun encode(s: String): String {
         return URLEncoder.encode(s, "UTF-8")
-                .replace("+", "%20")
-                .replace("%", "%25")
+            .replace("+", "%20")
+            .replace("%", "%25")
     }
 
-    override fun update(e: AnActionEvent?) {
-        val presentation = e?.presentation
-        val context = e?.dataContext
-
-        if (presentation == null || context == null) {
+    override fun update(event: AnActionEvent?) {
+        if (event == null) {
             return
         }
-
-        val provider = PlatformDataKeys.COPY_PROVIDER.getData(context)
-        val available = provider != null && provider.isCopyEnabled(context) && provider.isCopyVisible(context)
-        presentation.isVisible = available
-        presentation.isEnabled = available
+        val context = event.dataContext
+        val provider = PlatformDataKeys.COPY_PROVIDER.getData(context) ?: return
+        val isCopyAvailable = provider.isCopyEnabled(context) && provider.isCopyVisible(context)
+        event.presentation.apply {
+            isVisible = isCopyAvailable
+            isEnabled = isCopyAvailable
+        }
     }
 }
