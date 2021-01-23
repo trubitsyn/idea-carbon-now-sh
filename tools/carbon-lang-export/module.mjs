@@ -32,9 +32,9 @@ export function languageToProps(language) {
         extensionLists.flat(1)
     )).filter(it => it !== undefined).map(it => {
         if (it.startsWith(dot)) {
-            return it
+            return it.replace('.', '')
         } else {
-            return dot.concat(it)
+            return it
         }
     })
     return {name, carbonType, extensions}
