@@ -29,7 +29,7 @@ export function languageToProps(language) {
     ]
     const dot = '.'
     const extensions = Array.from(new Set(
-        extensionLists.flat(1)
+        extensionLists.flat()
     )).filter(it => it !== undefined).map(it => {
         if (it.startsWith(dot)) {
             return it.replace('.', '')
@@ -51,7 +51,7 @@ function extensionsByName(name) {
         return [
             extensionsByName(parts[0]),
             extensionsByName(parts[1])
-        ].flat(1)
+        ].flat()
     }
     let language = new LangLine().withLanguageName(name.toLowerCase())
     return language.extensions
@@ -67,9 +67,7 @@ export function propsToPairsArray(props) {
             })
         })
     })
-    pairs.sort((a, b) => {
-        return a.extension.localeCompare(b.extension)
-    })
+    pairs.sort((a, b) => a.extension.localeCompare(b.extension))
     return pairs
 }
 
@@ -126,7 +124,8 @@ export function kotlinize(extensionToCarbonTypePairs) {
     constants.push(autoConstant)
     constants.sort()
 
-    let entrySeparator = comma + newline + indent + indent
+    let doubleIndent = indent.repeat(2)
+    let entrySeparator = comma + newline + doubleIndent
     let newlineIndent = newline + indent
     let code = [
         packageName,
@@ -139,7 +138,7 @@ export function kotlinize(extensionToCarbonTypePairs) {
         indent,
         mappingStart,
         newline,
-        indent.repeat(2),
+        doubleIndent,
         entries.join(entrySeparator),
         newline,
         indent,
