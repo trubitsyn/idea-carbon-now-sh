@@ -45,6 +45,14 @@ function extensionsByMime(mime) {
 }
 
 function extensionsByName(name) {
+    let safeName = name.trim()
+    if (safeName.includes('/')) {
+        let parts = safeName.split('/')
+        return [
+            extensionsByName(parts[0]),
+            extensionsByName(parts[1])
+        ].flat(1)
+    }
     let language = new LangLine().withLanguageName(name.toLowerCase())
     return language.extensions
 }
