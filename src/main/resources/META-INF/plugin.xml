@@ -25,5 +25,4 @@
             <add-to-group group-id="EditorPopupMenu" anchor="after" relative-to-action="$SearchWeb"/>
         </action>
     </actions>
-
 </idea-plugin>
