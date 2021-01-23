@@ -89,7 +89,7 @@ let carbonTypeNameVar = `{carbonTypeName}`
 let carbonTypeVar = `{carbonType}`
 let extensionVar = `{extension}`
 let constantTemplate = `private const val ${carbonTypeNameVar} = "${carbonTypeVar}"`
-let mappingStart = `private val mapping = hashMapOf(`
+let mappingStart = `private val mapping = mapOf(`
 let entryTemplate = `"${extensionVar}" to ${carbonTypeNameVar}`
 let mappingEnd = `)`
 let newline = `\n`

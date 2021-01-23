@@ -81,7 +81,7 @@ object Languages {
     private const val XQUERY = "xquery"
     private const val YAML = "yaml"
 
-    private val mapping = hashMapOf(
+    private val mapping = mapOf(
         "_coffee" to COFFEESCRIPT,
         "_js" to JAVASCRIPT,
         "adml" to HTMLMIXED,
